@@ -1,0 +1,21 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+
+@media only screen and (max-width:800px){
+  html{
+    font-size: 80%;
+  }
+}
+@media only screen and (max-width:500px){
+  html{
+    font-size: 70%;
+  }
+}

@@ -1,0 +1,1 @@
+export { ReactComponent as RIcon } from "./R-removebg-preview.svg";
