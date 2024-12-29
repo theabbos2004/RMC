@@ -14,7 +14,7 @@ const INITIAL_STATE : IContextType = {
 const Context = createContext<IContextType>(INITIAL_STATE);
 
 export default function MainContext({ children }: { children: ReactNode }) {
-    const [isMenu, setIsMenu] = useState<boolean>(true)
+    const [isMenu, setIsMenu] = useState<boolean>(false)
     const [navborList, setNavborList] = useState<INavbarItem[]>(oldNavbarList)
     const [projectNavborList, setProjectNavborList] = useState<ProjectsNavbor[]>(ProjectsListNavbor)
 
