@@ -2,10 +2,23 @@ import { Link } from "react-scroll"
 import { useMainContext } from "../contexts/index"
 import { Button } from "./shared"
 import logo from "../assets/logo.png"
+import { useEffect, useState } from "react"
 export default function Header() {
     const {setIsMenu,isMenu,navborList,activeNavbar}=useMainContext()
+    const [scrollPosition, setScrollPosition] = useState<number>(0);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY)
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [])
   return (
-    <div className={`w-full flex flex-col fixed z-10 top-0 left-0 gap-0`}>
+    <div className={`w-full flex flex-col fixed z-10 top-0 left-0 gap-0 transition-transform`}
+        style={{backdropFilter:scrollPosition>10?'blur(15px)':''}}
+    >
         <div className={`w-full sm:h-20 flex py-1 ${isMenu?"h-[calc(100vh)] flex-col":"h-16 flex-row"}`}>
             <div className={`${isMenu?"h-[5%]":"h-full"} sm:h-full container mx-auto  flex items-center justify-between border-none`}>
                 <div className="h-full flex items-center gap-20">
