@@ -17,8 +17,8 @@ export default function Header() {
     };
   }, [])
   return (
-    <div className={`w-full flex flex-col fixed z-10 top-0 left-0 gap-0 transition-transform ${isMenu && "bg-dark-blue"}`}
-        style={{backdropFilter:scrollPosition>10 && !isMenu ?'blur(15px)':''}}
+    <div className={`w-full flex flex-col fixed z-10 top-0 left-0 gap-0 transition-transform ${isMenu && "bg-dark-blue md:bg-transparent"}`}
+        style={{backdropFilter:scrollPosition>10 ?'blur(15px)':''}}
     >
         <div className={`w-full sm:h-20 flex py-1 ${isMenu?"h-[calc(100vh)] flex-col":"h-16 flex-row"}`}
              style={{transition:"all 0.5 ease-in-out"}}
