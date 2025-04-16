@@ -32,7 +32,7 @@ export default function About() {
             </div>
             <div className="w-full lg:w-2/4 flex items-center justify-center">
               <Slider 
-                positon={["5","0"]} 
+                positon={{y:["5","0"]}} 
                 sliders={AboutImageList} 
                 sliderClassName="!grid-cols-2 !gap-10 !lg:gap-4 place-items-center" 
                 classNameBoxCard="!w-auto" 
