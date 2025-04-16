@@ -1,0 +1,18 @@
+.box {
+    top: 3rem;
+    position:sticky;
+    animation: alternate 1s 1 alternate both ;
+    animation-timeline: view();
+}
+@keyframes alternate {
+    0% { 
+        .children{
+            display: hidden;
+        }
+     }
+    100% { 
+        .children{
+            display: block;
+        }
+    }
+}

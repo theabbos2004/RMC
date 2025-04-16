@@ -38,7 +38,7 @@ export default function Projects() {
             <div className="flex w-full">
                 {
                     list && 
-                        <Slider positon={["0","6"]}  sliders={list} 
+                        <Slider positon={{y:["0","6"]}}  sliders={list} 
                             boxClassName="!justify-center" 
                             classNameBoxCard="border-2 border-gray-50 !w-auto" 
                             sliderClassName="!flex-wrap place-items-center gap-5"

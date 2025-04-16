@@ -1,8 +1,21 @@
-import { memo } from "react"
+import React, { forwardRef, memo } from "react";
 
-function Card({imageUrl,title,main,style,classNameBox,classNameTitle,classNameMain}:{imageUrl?:any,title?:string,main?:string,style?:any,classNameBox?:string,classNameTitle?:string,classNameMain?:string}) {
+export type CardProps = {
+  imageUrl?: string;
+  title?: string;
+  main?: string;
+  style?: React.CSSProperties;
+  classNameBox?: string;
+  classNameTitle?: string;
+  classNameMain?: string;
+};
+
+ const Card = forwardRef<HTMLDivElement, CardProps>(({
+  imageUrl, title, main, style, classNameBox, classNameTitle, classNameMain
+}, ref) => {
   return (
     <div 
+      ref={ref}
       className={`w-72 flex flex-col justify-end group text-gray-50 cursor-pointer bg-[100%_100%] ${classNameBox}`}
       style={{
         ...style
@@ -20,5 +33,5 @@ function Card({imageUrl,title,main,style,classNameBox,classNameTitle,classNameMa
         </div>
     </div>
   )
-}
+})
 export default memo(Card)
